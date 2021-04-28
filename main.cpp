@@ -93,13 +93,6 @@ class Grafo {
         this -> matriz[_arestas[i][1]][_arestas[i][0]] = 1;
       }
 
-      for (int i = 0; i < getNumeroDeVertices(); i++) {
-
-        for (int j = 0; j < getNumeroDeVertices(); j++) {
-          cout << this -> matriz[i][j] << " ";
-        }
-        cout << "\n";
-      }
     } else if (this -> tipoDeDado == "vetor") {
 
       for (int i = 0; i < getNumeroDeVertices(); i++) {
@@ -117,14 +110,6 @@ class Grafo {
 
       for (int i = 0; i < getNumeroDeVertices(); i++) {
         sort(matriz[i].begin(), matriz[i].end());
-      }
-      for (int i = 0; i < getNumeroDeVertices(); i++) {
-
-        for (int j = 0; j < this -> matriz[i].size(); j++) {
-
-          cout << this -> matriz[i][j] << " ";
-        }
-        cout << "\n";
       }
 
     }
@@ -449,7 +434,7 @@ class Grafo {
 int main(void) {
 
   //Grafo grafo("grafo_2.txt", "vetor");
-  //Grafo grafo("grafo_2.txt", "matriz");
+  Grafo grafo("grafo_2.txt", "matriz");
   
   
   // using std::chrono::high_resolution_clock;

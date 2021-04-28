@@ -2,7 +2,7 @@ Numero de vertices: 968
 Numero de arestas: 14204
 Grau minimo de vertice: 2
 Grau maximo de vertice: 59
-Grau medio de vertices: 29.347107
+Grau medio de vertices: 28.665289
 Mediana dos graus de vertices: 31.000000
 Dados sobre componentes conexas:
 componentes: 5
