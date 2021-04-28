@@ -28,32 +28,7 @@ class Grafo {
       this -> tipoDeDado = _tipoDeDado;
       criarGrafo(getArestasDeArquivo(_fileName));
       relatorio();
-      // using std::chrono::high_resolution_clock;
-      // using std::chrono::duration_cast;
-      // using std::chrono::duration;
-      // using std::chrono::milliseconds;
-      //TESTE: Mil BFS's e tempo de execucao
-      // auto t1 = high_resolution_clock::now();
-      //    for (int i = 0; i < 1000; i++) {
-      //      BFS(i);
-      //  
-      //	}
-      // auto t2 = high_resolution_clock::now();
-      // auto ms_int = duration_cast<milliseconds>(t2 - t1);
-      // cout <<"Mil bfs's: "<<ms_int.count()<<" ms";
-
-      //TESTE: Diametro e tempo de execucao
-      // auto tinicio = high_resolution_clock::now();      
-      //cout<<"diametro :"<<diametro()<<endl;
-      // auto tfim = high_resolution_clock::now();
-      // auto ms_int_2 = duration_cast<milliseconds>(tfim - tinicio);
-      // cout <<"Diametro: "<<ms_int_2.count()<<" ms";
-
-      //TESTE: Distancia entre vertices
-      //cout<<"distancia :"<<"10,20 "<<distancia(10,20)<<endl;
-      //cout<<"distancia :"<<"10,30 "<<distancia(10,30)<<endl;
-      //cout<<"distancia :"<<"20,30 "<<distancia(20,30)<<endl;
-      //componentesConexas();
+      
 
     }
 
@@ -447,13 +422,12 @@ class Grafo {
     componentesInfo += "componentes: " + to_string(componentes.size()) + '\n';
     for (int h = 0; h < componentes.size(); h++) {
       int componenteIndice = h + 1;
-      componentesInfo += to_string(componentes[h].size()) + "vertices. \n";
-      componentesInfo += "Vertices de componente " + to_string(componenteIndice);
+      componentesInfo += to_string(componentes[h].size()) + " vertices de componente " + to_string(componenteIndice);
       componentesInfo += ": ";
       for (int g = 0; g < componentes[h].size(); g++) {
         componentesInfo += to_string(componentes[h][g] + 1) + " ";
       }
-      componentesInfo += '\n';
+      componentesInfo += "\n\n";
     }
     return componentesInfo;
   }
@@ -474,7 +448,43 @@ class Grafo {
 
 int main(void) {
 
-  Grafo grafo("grafo_2.txt", "vetor");
+  //Grafo grafo("grafo_2.txt", "vetor");
+  //Grafo grafo("grafo_2.txt", "matriz");
+  
+  
+  // using std::chrono::high_resolution_clock;
+      // using std::chrono::duration_cast;
+      // using std::chrono::duration;
+      // using std::chrono::milliseconds;
+      //TESTE: Mil BFS's e tempo de execucao
+      // auto t1 = high_resolution_clock::now();
+      //    for (int i = 0; i < 1000; i++) {
+      //      grafo.BFS(i);
+      //  
+      //	}
+      // auto t2 = high_resolution_clock::now();
+      // auto ms_int = duration_cast<milliseconds>(t2 - t1);
+      // cout <<"Mil bfs's: "<<ms_int.count()<<" ms";
+//------
+      //TESTE: Diametro e tempo de execucao
+      // auto tinicio = high_resolution_clock::now();      
+      //cout<<"diametro :"<<grafo.diametro()<<endl;
+      // auto tfim = high_resolution_clock::now();
+      // auto ms_int_2 = duration_cast<milliseconds>(tfim - tinicio);
+      // cout <<"Diametro: "<<ms_int_2.count()<<" ms";
+//------
+      //TESTE: Distancia entre vertices
+      //cout<<"distancia :"<<"10,20 "<<grafo.distancia(10,20)<<endl;
+      //cout<<"distancia :"<<"10,30 "<<grafo.distancia(10,30)<<endl;
+      //cout<<"distancia :"<<"20,30 "<<grafo.distancia(20,30)<<endl;
+  //------    
+      //TESTE: Componentes conexas:
+      //cout<<grafo.componentesConexas(); 
+//-------
+  	//TESTE: Paternidade de vertices:
+  	//grafo.BFS(1);
+  	//grafo.BFS(2);
+  	//grafo.BFS(3);
   return 0;
 
 }
